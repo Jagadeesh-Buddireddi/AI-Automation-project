@@ -10,7 +10,7 @@ public class ConfigReader {
 
     private static Properties properties;
 
-    static{
+    public static void loadProperties() {
         properties = new Properties();
         try(FileInputStream fis = new FileInputStream("src/test/resources/config.properties")) {
             properties.load(fis);
