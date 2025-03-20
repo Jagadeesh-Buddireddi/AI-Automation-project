@@ -18,10 +18,11 @@ public class ParabankStepdefinitions extends ParabankStepdefinitionsSub {
     }
 
     @When("the user registers new account")
-    public void theUserRegistersNewAccount() {
+    public void theUserRegistersNewAccount() throws InterruptedException {
+        registerAccount();
     }
 
-    @Then("the user logs in with new credentials")
-    public void theUserLogsInWithNewCredentials() {
-    }
+//    @Then("the user logs in with new credentials")
+//    public void theUserLogsInWithNewCredentials() {
+//    }
 }

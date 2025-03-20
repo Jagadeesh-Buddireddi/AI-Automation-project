@@ -23,7 +23,6 @@ public class HomePage {
 
 
     public void navigateToUrl(){
-        ConfigReader.loadProperties();
         String url = ConfigReader.getProperty("URL");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(url);
