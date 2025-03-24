@@ -1,29 +1,41 @@
 package stepDefinitions;
 
+import config.ConfigReader;
+import driver.DriverFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pages.CommonStepObjects;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.ScreenShotsUtil;
 
-public class ParabankStepdefinitionsSub {
+import java.time.Duration;
+
+@Slf4j
+public class ParabankStepdefinitionsSub extends CommonStepObjects {
+
 
     public WebDriver driver;
-    public static HomePage homePage;
     public static LoginPage loginPage;
 
-    public ParabankStepdefinitionsSub(WebDriver driver){
-        this.driver = driver;
+    public ParabankStepdefinitionsSub() {
+        this.driver = DriverFactory.getDriver();
     }
+
 
 
     @Test
-    public void navigateToHomepage(){
+    public void navigateToHomepage() {
         homePage.navigateToUrl();
     }
 
-    public void registerAccount() throws InterruptedException {
-        loginPage.userRegistration();
+    public void registerAccount(){
+        log.info("Account Registered");
     }
 
-
+    public void delete(){
+        log.info("delete");
+    }
 }
+
